@@ -1,6 +1,8 @@
 <script lang="ts" setup>
+import { useRouter } from "vue-router";
+const router = useRouter() 
 function startGame() {
-  alert("text");
+  router.push('/selectionScreen')
 }
 </script>
 
@@ -16,10 +18,12 @@ function startGame() {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 1000px;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .start-button {
   padding: 10px;
 }
+
 </style>
