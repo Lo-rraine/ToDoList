@@ -6,14 +6,17 @@ import { createRouter, createWebHistory } from "vue-router";
 const routes = [
   {
     path: "/",
+    name: 'home-screen',
     component: Home,
   },
   {
     path: "/selectionScreen",
+    name: "second-screen",
     component: SecondScreen,
   },
   {
     path: "/gameScreen",
+    name: "game-screen",
     component: GameScreen,
   },
 ];

@@ -1,22 +1,31 @@
 <script lang="ts" setup>
-import { useRouter } from "vue-router";
+import { useRouter, RouteLocation } from "vue-router";
 
-const routerVar = useRouter();
+const router = useRouter();
 function goBack() {
-  routerVar.back()
+  router.back()
 }
 const selectSnail = () => {
-  alert("You selected a snail");
-  routerVar.push('/gameScreen')
+
+
+  const location = {
+    name: 'game-screen',
+    query: {
+      "insect-id": 1
+    }
+  } as unknown as RouteLocation
+
+  router.push(location)
+
 }
 const selectAnt = () => {
-  alert("You selected an Ant")
+  router.push({ name: 'game-screen', query: { "insect-id": 2 } })
 }
 const selectBug = () => {
-  alert("You selected a Bug")
+  router.push({ name: 'game-screen', query: { "insect-id": 3 } })
 }
 const selectWorm = () => {
-  alert("You selected a worm")
+  router.push({ name: 'game-screen', query: { "insect-id": 4 } })
 }
 </script>
 
@@ -31,22 +40,21 @@ const selectWorm = () => {
     <div class="buttons-class">
       <button class="insect-button" v-on:click="selectSnail">
         <p>Snail</p>
-        <img
-          src="https://cdn-icons.flaticon.com/png/512/2153/premium/2153123.png?token=exp=1657662904~hmac=9e2abbd5372ef11f4f3ba40780b20fee" />
+        <img src="@/assets/img/snail.png" referrerpolicy="no-referrer" />
       </button>
       <button class="insect-button" @click="selectAnt">
         <p>Ant</p>
-        <img src="https://cdn-icons-png.flaticon.com/512/7816/7816744.png" />
+        <img src="@/assets/img/ant.png" referrerpolicy="no-referrer" />
       </button>
       <button class="insect-button" @click="selectBug">
         <p>Lady Bug</p>
         <img
-          src="https://cdn-icons.flaticon.com/png/512/2831/premium/2831684.png?token=exp=1657663992~hmac=3471ac0c318160320253118d2f8b4894" />
+          src="@/assets/img/ladybug.png" />
       </button>
       <button class="insect-button" v-on:click="selectWorm">
         <p>Worm</p>
         <img
-          src="https://cdn-icons.flaticon.com/png/512/765/premium/765839.png?token=exp=1657663902~hmac=93413f559b0468dc560599a062e7e8f4" />
+          src="@/assets/img/worm.png" />
       </button>
     </div>
   </div>

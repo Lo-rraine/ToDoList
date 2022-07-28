@@ -1,13 +1,12 @@
 <script lang="ts" setup>
 import { useRouter } from "vue-router";
-import { useGame } from "@/stores/game";
+
 
 const router = useRouter();
 function startGame() {
   router.push('/selectionScreen');
 }
 
-const number = useGame();
 
 
 </script>
@@ -15,7 +14,6 @@ const number = useGame();
 <template>
   <div class="screen">
     <button class="start-button" @click="startGame">Start Game</button>
-    <button @click="number.increase">{{number.count}}</button>
   </div>
 </template>
 
