@@ -13,6 +13,7 @@ const currentInsectId = computed(() => Number(route.query["insect-id"]))
 <div class="screen">
     <h2>Bugs Collected:</h2>
     <ChosenInsect :id="currentInsectId"/>
+   
      
 </div>
 </template>
